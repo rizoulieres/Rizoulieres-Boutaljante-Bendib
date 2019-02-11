@@ -1,6 +1,7 @@
 package com.example.devtools;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,7 +37,10 @@ public class PersonAdapter extends ArrayAdapter<Personne> {
         Personne personne = getItem(position);
         viewHolder.nom.setText(personne.getNom());
         viewHolder.prenom.setText(personne.getPrenom());
-        viewHolder.couleur.setImageDrawable(new ColorDrawable(personne.getCouleur()));
+        int r = (int) (Math.random()*255);
+        int g = (int) (Math.random()*255);
+        int b = (int) (Math.random()*255);
+        viewHolder.couleur.setImageDrawable(new ColorDrawable(Color.rgb(r,g,b)));
 
         return convertView;
     }
